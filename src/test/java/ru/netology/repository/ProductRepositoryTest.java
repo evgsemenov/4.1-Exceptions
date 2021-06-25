@@ -16,7 +16,7 @@ class ProductRepositoryTest {
     private Product item = new Product(4, "Product for remove", 500);
 
     @Test
-    public void shouldRemoveByIdIfExist() {
+    public void shouldRemoveByIdIfExistTest() {
         repository.save(item);
         repository.save(coreJava);
         repository.removeById(4);
@@ -26,10 +26,9 @@ class ProductRepositoryTest {
     }
 
     @Test
-    public void shouldShowNotFoundExceptionIfRemoveByIdNotExist() {
+    public void shouldShowNotFoundExceptionIfRemoveByIdNotExistTest() {
         repository.save(item);
         repository.save(coreJava);
-        repository.removeById(20);
         assertThrows(NotFoundException.class, () -> {
             repository.removeById(15);
         });
